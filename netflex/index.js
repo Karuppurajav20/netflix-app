@@ -6,18 +6,20 @@ document.addEventListener("DOMContentLoaded", function () {
     accordion.addEventListener('click', () => {
       const panel = panels[i];
       const icon = accordion.querySelector('.icon');
+      if (!panel || !icon) return;
 
       // Close all other panels
       panels.forEach((p, index) => {
         if (index !== i) {
           p.style.maxHeight = null;
           p.classList.remove('open');
-          accordions[index].querySelector('.icon').textContent = '+';
+          const otherIcon = accordions[index].querySelector('.icon');
+          if (otherIcon) otherIcon.textContent = '+';
         }
       });
 
       // Toggle current panel
-      if (panel.style.maxHeight) {
+      if (panel.classList.contains('open')) {
         panel.style.maxHeight = null;
         panel.classList.remove('open');
         icon.textContent = '+';
@@ -29,8 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-
-
-
-
+function scrollCarousel(direction) {
+  const carousel = document.getElementById("carousel");
+  if (!carousel) return;
+  const scrollAmount = 400; // Adjust as needed for your card width
+  carousel.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth"
+  });
+}

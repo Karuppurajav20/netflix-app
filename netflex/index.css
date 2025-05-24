@@ -13,7 +13,7 @@ html {
 }
 
 .bg-image {
-    background-image: url("./image/background\ image.jpg");
+    background-image: url("./images/background\ image.jpg ");
     position: relative;
     filter: blur(8px);
     -webkit-filter: blur(8px);
@@ -58,7 +58,7 @@ html {
 }
 
 .select {
-    margin-left: 1000px;
+    margin-left: 1200px;
     margin-top: 20px;
     padding: 5px;
 }
@@ -81,7 +81,7 @@ html {
 .hero {
     background:
         radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8) 100%),
-        url('./image/background\ image.jpg') no-repeat center center/cover;
+        url('./images/background\ image.jpg ') no-repeat center center/cover;
     height: 500px;
     position: relative;
     display: flex;
